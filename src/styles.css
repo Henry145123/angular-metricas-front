@@ -1,0 +1,44 @@
+
+
+/* You can add global styles to this file, and also import other style files */
+
+body {
+  margin: 0;
+  padding: 0;
+ /* background-color: rgb(17 17 19 / 90%); /* Color de fondo oscuro */
+ background-color: #1c1b22;
+  color: #ffffff; /* Color de texto blanco */
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background-color: #111113;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+}
+
+main {
+  margin: 0px 80px;
+  padding: 20px;
+}
+
+.pelicula {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.pelicula img {
+  max-width: 150px;
+  margin-right: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.pelicula h2 {
+  margin-top: 0;
+}
+

@@ -1,0 +1,481 @@
+/*
+.form-group {
+  margin-bottom: 15px;
+}
+
+
+.form-label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.input-group {
+  display: flex;
+}
+
+.form-control {
+  flex: 1;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555555;
+  background-color: #ffffff;
+  background-image: none;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+}
+
+
+.btn {
+  padding: 6px 12px;
+  margin-left: 5px;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.btn-primary {
+  color: #ffffff;
+  background-color: #337ab7;
+  border-color: #2e6da4;
+}
+
+
+.custom-table {
+  border-collapse: collapse;
+  width: 60%;
+
+}
+
+.custom-table th,
+.custom-table td {
+  padding: 8px;
+  text-align: left;
+}
+
+.custom-table th {
+  background-color: #f2f2f2;
+}
+
+.custom-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.custom-table tbody tr:hover {
+  background-color: #eaeaea;
+}
+
+.chart-container {
+  display: flex;
+}
+
+.chart-container > div {
+  margin-right: 50px;
+}
+
+ */
+/*
+ body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(circle, #1a1a1a, #000000);
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background-color: #121212;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+}
+
+main {
+  padding: 20px;
+
+}
+
+.pelicula {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.pelicula img {
+  max-width: 150px;
+  margin-right: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.pelicula h2 {
+  margin-top: 0;
+}
+*/
+.container-body{
+  overflow: auto;
+}
+
+.movie-list {
+  /*
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  */
+  display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+        gap: 30px;
+        width: 100%;
+}
+.card {
+ /* width: 200px;*/
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 8px;
+
+  white-space: nowrap; /* Evita que el texto haga saltos de línea */
+  overflow: hidden; /* Oculta el contenido que excede el tamaño del contenedor */
+  text-overflow: ellipsis; /* Añade puntos suspensivos (...) para indicar que el texto está truncado */
+  width: 90%; /* Ajusta el ancho del contenedor según tus necesidades */
+  text-align: justify;
+}
+.image-container{
+  overflow: hidden;
+
+  text-align: center;
+
+  background-color: none;
+  position: relative;
+  height: 100%;
+}
+.image{
+
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  transition: opacity 0.3s ease;
+}
+.play-icon {
+  position: absolute;
+  height: 80px;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+
+  opacity: 0; /* Inicialmente oculto */
+  transition: opacity 0.3s;
+}
+
+
+/* Efecto hover */
+.card:hover .image {
+  opacity: 0.3; /* Opacidad al pasar el cursor sobre la tarjeta */
+  /* transform: scale(1.2); /* Ajusta el valor para la expansión */
+  cursor: pointer;
+}
+
+.card:hover .play-icon {
+  opacity: 1; /* Muestra el ícono de "play" al pasar el cursor sobre la tarjeta */
+  cursor: pointer;
+}
+
+
+@media (max-width: 600px) {
+  .movie-list {
+    grid-template-columns: repeat(2, minmax(140px, 1fr));
+  }
+  .card{
+    margin: 0;
+  }
+  .container-body{
+    padding: 0;
+  }
+
+
+}
+@media (max-width: 500px) {
+  .movie-list {
+    grid-template-columns: repeat(2, minmax(100px, 1fr));
+    gap: 15px;
+  }
+  img{
+    width: 100%;
+  }
+  main{
+    margin: 0px 20px;
+  }
+
+}
+
+@media (max-width: 300px) {
+  .movie-list {
+    grid-template-columns: repeat(1, minmax(120px, 1fr));
+  }
+
+}
+
+
+/* home.component.css (o el nombre de tu archivo de estilos para el componente) */
+.carousel-image {
+  height: 600px; /* Establece la altura deseada para todas las imágenes del carrusel */
+  object-fit: cover;
+  opacity: 0.5;
+}
+
+.owl-carousel {
+  transition: opacity 0.3s ease;
+}
+
+.owl-item {
+  display: flex;
+  justify-content: center;
+}
+
+.item {
+  width: 100%;
+}
+
+.item img {
+  max-width: 100%;
+
+}
+
+
+.toolbar {
+  background-color: #222; /* Fondo oscuro */
+  color: #fff; /* Texto claro */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+.fill-space {
+  flex: 1; /* Espacio flexible para empujar los botones a la derecha */
+}
+
+.button-toolbar {
+  margin-left: 8px;
+  margin-right: 8px;
+  transition: background-color 0.2s ease; /* Transición suave */
+}
+
+.button-toolbar:hover {
+  background-color: #444; /* Color de fondo oscuro al pasar el mouse */
+}
+
+.header{
+  background-color: #111113;
+  padding: 10px;
+  text-align: center;
+}
+
+ /* Estilo para el contenedor del header */
+ .header-container {
+  padding: 10px 0; /* Espaciado interno */
+}
+
+/* Estilos para los enlaces */
+.enlaces-container {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 15px;
+  list-style: none;
+  margin: 0;
+}
+
+.enlaces {
+  text-decoration: none; /* Quitamos subrayado de los enlaces */
+  color: #333; /* Color del texto */
+  font-size: 20px; /* Tamaño del texto */
+  margin-right: 10px; /* Espaciado entre enlaces */
+  padding: 10px 15px; /* Espaciado interno */
+  border-radius: 5px; /* Bordes redondeados */
+  transition: background-color 0.3s; /* Transición suave del color de fondo */
+}
+
+/* Estilo para el enlace activo */
+.enlaces.active {
+  background-color: #007bff; /* Color de fondo del enlace activo */
+  color: #fff; /* Color del texto en enlace activo */
+}
+
+/* Estilo para cambiar el cursor al pasar por encima del enlace */
+.enlaces:hover {
+  background-color: #333; /* Color de fondo al pasar por encima del enlace */
+  color: #fff;
+}
+
+/* Estilos generales */
+.search-container {
+  position: relative;
+  width: 300px; /* ajusta el ancho según tus necesidades */
+}
+
+/* Estilos del campo de búsqueda */
+.search-input {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #ccc; /* Color del borde del buscador */
+  border-radius: 8px; /* Ajusta el radio de las esquinas para obtener el aspecto "outline" */
+  outline: none; /* Quita el borde de enfoque predeterminado */
+}
+
+/* Estilos del ícono de búsqueda */
+.search-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px; /* Ajusta el desplazamiento del ícono desde el borde derecho */
+  transform: translateY(-50%);
+  color: #666; /* Color del ícono de búsqueda */
+  cursor: pointer;
+}
+
+/* Estilos al enfocar el campo de búsqueda */
+.search-input:focus {
+  /*
+  border-color: #007bff;
+  box-shadow: 0 0 4px #007bff;
+  */
+  /* border-color: #808080;
+  box-shadow: 0 0 4px #808080; */
+}
+
+
+
+
+
+
+
+/*
+
+
+
+
+
+.contenedor-padre {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+.contenedor {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  animation: moveAnimation 6s linear infinite;
+  width: 573px;
+}
+
+.gaaaa {
+  font-size: 30px;
+  font-weight: bold;
+  color: #9B0000;
+  text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px #7F0000;
+  transition: box-shadow 3s ease-in-out;
+}
+
+@keyframes moveAnimation {
+  0% {
+    left: 0;
+    box-shadow: 0 0 30px #7F0000;
+    background: black;
+  }
+
+  100% {
+    left: calc(100%);
+    box-shadow: 0 0 300px #7F0000;
+
+  }
+
+}
+
+
+
+#cuadrado {
+  width: 50px;
+  height: 50px;
+  background-color: blue;
+  position: relative;
+  animation: moverCuadrado 2s linear infinite;
+}
+
+
+@keyframes moverCuadrado {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: calc(100% - 50px);
+  }
+}
+
+.box1, .box2 {
+  position: absolute;
+
+  background-color: black;
+  box-shadow: 0 0 30px #7F0000;
+}
+.box2{
+  position: absolute;
+} */
+
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+}
+
+.search-box {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+
+.search-box .icon{
+  padding: 8px;
+  color: black;
+}
+
+.search-input {
+  margin-left: 15px;
+  margin-right: 10px;
+  width: 250px;
+  padding: 8px;
+  border: none;
+  border-radius: 10px;
+  height: 60%;
+  font-size: 17px;
+}
+
